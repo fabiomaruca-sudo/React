@@ -1,0 +1,20 @@
+Dentro la tua FlatList:
+renderItem={({ item }) => (
+  <Prodotto
+    {...item}
+    onCompra={() => compra(item.id)}
+    onDelete={() => elimina(item.id)}
+  />
+)}
+
+
+Dentro Prodotto:
+<Pressable onPress={props.onCompra}>
+  <Text>
+    {props.comprato ? 'Comprato' : 'Non comprato'}
+  </Text>
+</Pressable>
+
+<Pressable onPress={props.onDelete}>
+  <Text>Elimina</Text>
+</Pressable>
